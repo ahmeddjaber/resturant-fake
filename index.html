@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FireCrust Bistro | One-Page Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7 reveal-item">
+            <span class="badge rounded-pill text-bg-warning text-dark px-3 py-2 mb-3">Wood-Fired Excellence</span>
+            <h1 class="display-4 fw-bold mb-3">Bold Fire, Fresh Dough, Unforgettable Flavor</h1>
+            <p class="lead mb-4">Experience artisan pizzas, warm hospitality, and a cozy atmosphere inspired by authentic oven-fired cooking.</p>
+            <a class="btn btn-fire btn-lg rounded-pill px-4" href="#reservation">Book Your Table</a>
+          </div>
+          <div class="col-lg-5 reveal-item">
+            <div class="content-panel">
+              <h5 class="mb-3">Tonight's Specials</h5>
+              <ul class="list-unstyled mb-0">
+                <li class="d-flex justify-content-between py-2 border-bottom"><span>Diavola Pizza</span><strong>$17.50</strong></li>
+                <li class="d-flex justify-content-between py-2 border-bottom"><span>Truffle Burrata</span><strong>$13.00</strong></li>
+                <li class="d-flex justify-content-between py-2"><span>Tiramisu Flame</span><strong>$9.00</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-spacing">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 reveal-item">
+            <h2 class="section-title mb-3">Our Story</h2>
+            <p class="section-subtitle mb-3">FireCrust Bistro began as a family dream to bring honest, oven-fired food to the neighborhood. We blend traditional pizza craft with modern ingredients and careful presentation.</p>
+            <p class="section-subtitle mb-0">Every plate reflects our passion for quality: slow-fermented dough, premium toppings, and service that feels like home.</p>
+          </div>
+          <div class="col-lg-6 reveal-item">
+            <div class="content-panel">
+              <h5 class="mb-3">Why Guests Love Us</h5>
+              <ul class="mb-0 text-secondary">
+                <li>Authentic wood-fired oven flavor</li>
+                <li>Seasonal ingredients sourced locally</li>
+                <li>Warm interior with modern comfort</li>
+                <li>Friendly team and fast service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section-spacing">
+      <div class="container">
+        <div class="text-center mb-5 reveal-item">
+          <h2 class="section-title mb-2">Our Menu</h2>
+          <p class="section-subtitle mb-0">Loaded dynamically from our kitchen API.</p>
+        </div>
+        <div id="menu-list" class="row g-4"></div>
+      </div>
+    </section>
+
+    <section id="reservation" class="section-spacing">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 reveal-item">
+            <div class="form-shell p-4 p-md-5">
+              <h2 class="section-title mb-3">Reservation</h2>
+              <p class="section-subtitle mb-4">Reserve your table in seconds.</p>
+              <form id="reservation-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-name">Name</label>
+                    <input id="res-name" name="name" class="form-control" type="text" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-email">Email</label>
+                    <input id="res-email" name="email" class="form-control" type="email" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-phone">Phone</label>
+                    <input id="res-phone" name="phone" class="form-control" type="tel" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-guests">Guests</label>
+                    <select id="res-guests" name="guests" class="form-select" required>
+                      <option value="">Select guests</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-date">Date</label>
+                    <input id="res-date" name="date" class="form-control" type="date" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="res-time">Time</label>
+                    <input id="res-time" name="time" class="form-control" type="time" required />
+                  </div>
+                  <div class="col-12 d-grid d-md-flex justify-content-md-end pt-2">
+                    <button class="btn btn-fire rounded-pill px-4" type="submit">Submit Reservation</button>
+                  </div>
+                </div>
+              </form>
+              <div id="reservation-status" class="mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section-spacing">
+      <div class="container">
+        <div class="text-center mb-5 reveal-item">
+          <h2 class="section-title mb-2">Guest Reviews</h2>
+          <p class="section-subtitle mb-0">Real feedback from our diners.</p>
+        </div>
+
+        <div id="reviews-list" class="row g-4 mb-5"></div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 reveal-item">
+            <div class="form-shell p-4">
+              <h5 class="mb-3">Add Your Review</h5>
+              <form id="review-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="review-name">Name</label>
+                    <input id="review-name" name="reviewName" type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="review-rating">Rating</label>
+                    <select id="review-rating" name="reviewRating" class="form-select" required>
+                      <option value="">Select rating</option>
+                      <option value="5">5 - Excellent</option>
+                      <option value="4">4 - Very Good</option>
+                      <option value="3">3 - Good</option>
+                      <option value="2">2 - Fair</option>
+                      <option value="1">1 - Poor</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="review-comment">Comment</label>
+                    <textarea id="review-comment" name="reviewComment" rows="4" class="form-control" required></textarea>
+                  </div>
+                  <div class="col-12 d-grid d-md-flex justify-content-md-end">
+                    <button class="btn btn-fire rounded-pill px-4" type="submit">Submit Review</button>
+                  </div>
+                </div>
+              </form>
+              <div id="review-status" class="mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-spacing pb-0">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-5 reveal-item">
+            <div class="content-panel h-100">
+              <h2 class="section-title mb-3">Contact</h2>
+              <p class="mb-2"><strong>Address:</strong> 24 Gourmet Avenue, Paris</p>
+              <p class="mb-2"><strong>Phone:</strong> +33 1 23 45 67 89</p>
+              <p class="mb-0"><strong>Email:</strong> hello@firecrustbistro.com</p>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal-item">
+            <div class="map-wrap h-100">
+              <iframe
+                title="FireCrust Bistro Location"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Eiffel+Tower,+Paris&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/components.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
